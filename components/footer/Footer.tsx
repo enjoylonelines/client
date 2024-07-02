@@ -1,5 +1,27 @@
 import React from "react";
+import { RiHome2Line } from "react-icons/ri";
+import { MdBookmarkBorder } from "react-icons/md";
+import { BsChatDots } from "react-icons/bs";
+import { FaRegUser } from "react-icons/fa";
 
 export default function Footer() {
-  return <div>footer</div>;
+  return (
+    <div className="flex items-center justify-between h-20">
+      <div className="flex flex-col items-center justify-center w-full">
+        <RiHome2Line />홈
+      </div>
+      <div className="flex flex-col items-center justify-center w-full">
+        <MdBookmarkBorder />
+        저장
+      </div>
+      <div className="flex flex-col items-center justify-center w-full">
+        <BsChatDots />
+        커뮤니티
+      </div>
+      <div className="flex flex-col items-center justify-center w-full">
+        <FaRegUser />
+        MY
+      </div>
+    </div>
+  );
 }
