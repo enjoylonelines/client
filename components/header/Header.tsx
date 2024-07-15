@@ -11,7 +11,7 @@ import Image from "next/image";
 export default function Header() {
   return (
     <div className="flex items-center justify-center my-3">
-      <Image src="/mapstory_logo.png" alt="logo" width={230} height={54} />
+      <Image src="/mapstory_logo.png" alt="logo" width={230} height={50} />
     </div>
   );
 }

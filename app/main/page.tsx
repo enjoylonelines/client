@@ -4,40 +4,37 @@ import Header from "@/components/header/Header";
 import React, { useEffect, useRef, useState } from "react";
 
 export default function Page() {
-  const data = [
-    {
-      name: "임시",
-      address: "서울특별시 노원구 공릉동 408-112",
-      lat: 37.324467,
-      lng: 127.094711,
-      id: 1,
-      major: "몰라",
-    },
-    {
-      name: "임시2",
-      address: "서울특별시 노원구 공릉동 408-118",
-      lat: 37.344467,
-      lng: 127.094733,
-      id: 2,
-      major: "몰라",
-    },
-  ];
-
   const [isMapLoaded, setIsMapLoaded] = useState(false);
-  const [modalContent, setModalContent] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedHospitalId, setSelectedHospitalId] = useState(null);
-  const [selectedMarkerPosition, setSelectedMarkerPosition] = useState(null);
-  const [rememberedMarkerPosition, setRememberedMarkerPosition] =
-    useState(null);
+
+  useState(null);
   const mapRef = useRef(null);
 
   useEffect(() => {
+    const data = [
+      {
+        name: "임시",
+        address: "서울특별시 노원구 공릉동 408-112",
+        lat: 37.324467,
+        lng: 127.094711,
+        id: 1,
+        major: "몰라",
+      },
+      {
+        name: "임시2",
+        address: "서울특별시 노원구 공릉동 408-118",
+        lat: 37.344467,
+        lng: 127.094733,
+        id: 2,
+        major: "몰라",
+      },
+    ];
     const loadMap = () => {
       const mainLocation = new naver.maps.LatLng(37.402345, 127.101222);
 
       const mapOptions = {
         center: mainLocation,
+        scaleControl: false,
+        mapDataControl: false,
         zoom: 12,
       };
 
@@ -52,6 +49,10 @@ export default function Page() {
             position.coords.latitude,
             position.coords.longitude
           );
+          console.log(currentLocation);
+          //@ts-ignore
+          mapRef.current.setCenter(currentLocation);
+
           new naver.maps.Marker({
             position: currentLocation,
             map: map,
@@ -74,9 +75,9 @@ export default function Page() {
           map: map,
           title: e.name,
           icon: {
-            url: selectedHospitalId === e.id ? "/good.png" : "/bad.png",
-            size: new naver.maps.Size(50, 63),
-            scaledSize: new naver.maps.Size(50, 63),
+            url: "/bad.png",
+            size: new naver.maps.Size(40, 40),
+            scaledSize: new naver.maps.Size(40, 40),
             origin: new naver.maps.Point(0, 0),
             anchor: new naver.maps.Point(12, 37),
           },
@@ -104,6 +105,7 @@ export default function Page() {
 
       setIsMapLoaded(true);
     };
+
     if (window.naver && window.naver.maps) {
       loadMap();
     } else {
@@ -112,11 +114,11 @@ export default function Page() {
       mapScript.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_MAP_KEY}`;
       document.head.appendChild(mapScript);
     }
-  }, [selectedHospitalId]);
+  }, []);
   return (
-    <div>
+    <div className="h-screen">
       <Header />
-      <div id="map" style={{ width: "100%", height: "500px" }}>
+      <div id="map" className="w-full h-full">
         {isMapLoaded && <p>지도를 준비 중입니다!</p>}
       </div>
       <Footer />

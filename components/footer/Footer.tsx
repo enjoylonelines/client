@@ -6,7 +6,7 @@ import { FaRegUser } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <div className="fixed bottom-0 flex items-center justify-between max-w-[430px] w-full h-20">
+    <div className="bg-white fixed bottom-0 flex items-center justify-between max-w-[430px] w-full h-20">
       <div className="flex flex-col items-center justify-center w-full">
         <RiHome2Line />홈
       </div>
