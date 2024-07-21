@@ -1,7 +1,7 @@
 "use client";
-import Button from "@/components/auth/Button";
 import {
   appleButton,
+  emailButton,
   googleButton,
   kakaoButton,
   logoImage01,
@@ -19,47 +19,42 @@ const page = () => {
   };
 
   return (
-    <div className="w-full h-[100vh] px-[22px] pt-[55px]">
+    <div className="w-full h-[100vh] px-[55px] pt-[55px] pb-[64px]">
       <Image
-        src={logoImage01}
-        alt="로고"
-        width={166}
-        height={39}
-        className="mb-[154px]"
-      />
-      <Image
-        className="m-auto mb-[99.9px]"
+        className="m-auto mt-[100px]"
         src={logoImage02}
         alt="로고2"
         width={199}
         height={286.1}
       />
-      <p className="mb-3 font-extrabold">3초 가입으로 바로 시작해보세요. </p>
-
-      <div className="flex flex-col gap-[23.33px] mb-[63.31px]">
+      <Image src={logoImage01} alt="로고" width={359} className="absolute" />
+      <div className="flex flex-col gap-[20px] mb-[63.31px] mt-[130px]">
         <Link href={link}>
           <Image
             src={kakaoButton}
             alt="카카오로그인버튼"
-            width={386}
-            height={60.4}
+            width={319}
+            height={50}
           />
         </Link>
         <Link href={link}>
           <Image
             src={appleButton}
             alt="애플로그인버튼"
-            width={386}
-            height={60.4}
+            width={319}
+            height={50}
           />
         </Link>
         <Link href={link}>
           <Image
             src={googleButton}
             alt="구글로그인버튼"
-            width={386}
-            height={60.4}
+            width={319}
+            height={50}
           />
+        </Link>
+        <Link href={"/auth/login/email"}>
+          <Image src={emailButton} alt="이메일버튼" width={319} height={50} />
         </Link>
       </div>
     </div>
