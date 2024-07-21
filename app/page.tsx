@@ -1,4 +1,10 @@
-import { logoImage01, logoImage02 } from "@/public/images";
+import {
+  buttonImage01,
+  buttonImage02,
+  logoImage01,
+  logoImage02,
+  mockup,
+} from "@/public/images";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,28 +12,34 @@ export default function Home() {
   const link = "http://13.125.7.51:8080/oauth2/authorization/kakao";
 
   return (
-    <div className="w-full h-[100vh] px-[55px] pt-[55px] pb-[64px]">
+    <div className="w-full h-[100vh] pt-[55px] pl-[26px]">
       <Image
-        className="mt-[100px] m-auto"
-        src={logoImage02}
-        alt="로고2"
-        width={199}
-        height={286.1}
+        className="mb-[12px]"
+        src={logoImage01}
+        alt="로고"
+        width={166}
+        height={39}
       />
-      <Image src={logoImage01} alt="로고" width={359} className="absolute " />
-      <div className="mt-[157px] flex flex-col items-center gap-[17px]">
-        <Link href="/auth/login">
-          <button className="bg-white border-4 border-main text-main_text font-bold text-[25px] w-[317px] h-[61px] rounded-[24px]">
-            로그인
-          </button>
+      <p className="font-extrabold text-[25px] leading-7 mb-[35px]">
+        간편하게 일상생활을 기록하고
+        <br />
+        공유해보세요
+      </p>
+      <div className="flex justify-end w-full pr-3">
+        <Image
+          className="mb-[42px]"
+          src={mockup}
+          alt="배경"
+          width={302}
+          height={602}
+        />
+      </div>
+      <div className="flex gap-5">
+        <Link href={"/auth"}>
+          <Image src={buttonImage01} alt="버튼1" width={181} height={56} />
         </Link>
-        <Link href="/auth/signUp">
-          <button className="bg-white border-4 border-main text-main_text font-bold text-[25px] w-[317px] h-[61px] rounded-[24px]">
-            회원가입
-          </button>
-        </Link>
-        <button className="text-[#565151] font-medium text-[18px]">
-          SNS 계정으로 로그인하기
+        <button>
+          <Image src={buttonImage02} alt="버튼2" width={181} height={56} />
         </button>
       </div>
     </div>

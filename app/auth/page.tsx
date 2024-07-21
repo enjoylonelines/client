@@ -1,4 +1,5 @@
 "use client";
+import Button from "@/components/auth/Button";
 import {
   appleButton,
   googleButton,
@@ -10,7 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const page = () => {
+const AuthPage = () => {
   const link = "http://13.125.7.51:8080/oauth2/authorization/kakao";
 
   const handleLogin = () => {
@@ -18,38 +19,46 @@ const page = () => {
   };
 
   return (
-    <div className="w-full h-[100vh] px-[55px] pt-[55px] pb-[64px]">
+    <div className="w-full h-[100vh] px-[22px] pt-[55px]">
       <Image
-        className="m-auto mt-[100px]"
+        src={logoImage01}
+        alt="로고"
+        width={328}
+        height={77}
+        className="mb-[73px] ml-[45px]"
+      />
+      <Image
+        className="m-auto mb-[78.9px]"
         src={logoImage02}
         alt="로고2"
-        width={199}
+        width={197}
         height={286.1}
       />
-      <Image src={logoImage01} alt="로고" width={359} className="absolute" />
-      <div className="flex flex-col gap-[20px] mb-[63.31px] mt-[130px]">
+      <p className="mb-3 font-extrabold">3초 가입으로 바로 시작해보세요. </p>
+
+      <div className="flex flex-col gap-[23.33px] mb-[63.31px]">
         <Link href={link}>
           <Image
             src={kakaoButton}
             alt="카카오로그인버튼"
-            width={319}
-            height={50}
+            width={386}
+            height={60.4}
           />
         </Link>
         <Link href={link}>
           <Image
             src={appleButton}
             alt="애플로그인버튼"
-            width={319}
-            height={50}
+            width={386}
+            height={60.4}
           />
         </Link>
         <Link href={link}>
           <Image
             src={googleButton}
             alt="구글로그인버튼"
-            width={319}
-            height={50}
+            width={386}
+            height={60.4}
           />
         </Link>
       </div>
@@ -57,4 +66,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default AuthPage;

@@ -7,8 +7,8 @@ import logoImage02 from "@/public/images/auth/image03.png";
 import kakaoButton from "@/public/images/auth/kakaoButton.png";
 import appleButton from "@/public/images/auth/appleButton.png";
 import googleButton from "@/public/images/auth/googleButton.png";
-import emailButton from "@/public/images/auth/emailButton.png";
 import background from "@/public/images/background.png";
+import mockup from "@/public/images/auth/mockup.png";
 
 export {
   kakaoLoginButtonImage,
@@ -20,6 +20,6 @@ export {
   appleButton,
   googleButton,
   kakaoButton,
-  emailButton,
   background,
+  mockup,
 };
