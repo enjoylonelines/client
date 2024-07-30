@@ -9,6 +9,14 @@ import appleButton from "@/public/images/auth/appleButton.png";
 import googleButton from "@/public/images/auth/googleButton.png";
 import background from "@/public/images/background.png";
 import mockup from "@/public/images/auth/mockup.png";
+import home from "@/public/images/footer/home.png";
+import publicAlbum from "@/public/images/footer/public.png";
+import privateAlbum from "@/public/images/footer/private.png";
+import profile from "@/public/images/footer/profile.png";
+import plus from "@/public/images/footer/plus.png";
+import addFriend from "@/public/images/header/addFriend.png";
+import notification from "@/public/images/header/notification.png";
+import profile_header from "@/public/images/header/profile.png";
 
 export {
   kakaoLoginButtonImage,
@@ -22,4 +30,12 @@ export {
   kakaoButton,
   background,
   mockup,
+  home,
+  privateAlbum,
+  profile,
+  publicAlbum,
+  plus,
+  addFriend,
+  notification,
+  profile_header,
 };

@@ -45,7 +45,7 @@ const AuthPage = () => {
             height={60.4}
           />
         </Link>
-        <Link href={link}>
+        <Link href={"/main"}>
           <Image
             src={appleButton}
             alt="애플로그인버튼"

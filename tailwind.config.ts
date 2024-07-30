@@ -18,6 +18,9 @@ const config: Config = {
         main: "#6EBEB5",
         main_text: "#85C8C0",
       },
+      height: {
+        main: "calc(100vh - 80px - 54px)",
+      },
     },
   },
   plugins: [],

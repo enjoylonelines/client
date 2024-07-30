@@ -13,9 +13,9 @@ export default function RootLayout({
           strategy="afterInteractive"
           src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_CLIENT_ID}`}
         ></Script>
-        
-        <div className="flex flex-col items-center bg-slate-300">
-          <div className="max-w-[430px] min-h-screen w-full h-full bg-white flex justify-center items-center ">
+
+        <div className="flex flex-col items-center bg-slate-300 h-screen ">
+          <div className="max-w-[430px] h-screen w-full bg-white flex flex-col justify-center items-center ">
             {children}
           </div>
         </div>

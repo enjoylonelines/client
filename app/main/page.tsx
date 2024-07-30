@@ -115,13 +115,14 @@ export default function Page() {
       document.head.appendChild(mapScript);
     }
   }, []);
+
   return (
-    <div className="h-screen">
+    <>
       <Header />
-      <div id="map" className="w-full h-full">
+      <div id="map" className="w-full h-full ">
         {isMapLoaded && <p>지도를 준비 중입니다!</p>}
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
